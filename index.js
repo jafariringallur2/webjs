@@ -75,6 +75,15 @@ app.get('/logout', (req, res) => {
         res.send('Failed to logout.');
     });
 });
+app.get('/test', (req, res) => {
+ const chatId = '919605882981@c.us';
+    client.sendMessage(chatId, 'Hello from WhatsApp Web JS!').then(response => {
+        return "Message sent"
+    }).catch(err => {
+        return err;
+    });
+      return "OK"
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
