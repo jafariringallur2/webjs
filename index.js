@@ -17,6 +17,12 @@ client.on('qr', (qr) => {
 
 client.on('ready', () => {
     console.log('Client is ready!');
+      const chatId = '919605882981@c.us';
+    client.sendMessage(chatId, 'Hello from WhatsApp Web JS!').then(response => {
+        console.log('Message sent:', response);
+    }).catch(err => {
+        console.error('Error when sending message:', err);
+    });
 });
 
 client.on('authenticated', () => {
